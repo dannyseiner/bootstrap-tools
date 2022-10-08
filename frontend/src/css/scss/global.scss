@@ -1,0 +1,41 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  transition: 0.3s ease-in-out;
+  color: $base-color;
+}
+
+body {
+  background-color: $background-color;
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 50px);
+  margin: auto;
+  margin-top: 120px;
+  position: relative;
+  left: 25px;
+  max-width: 1000px;
+  justify-content: center;
+  align-content: center;
+}
+
+.bg-component {
+  background-color: $component-background;
+}
+
+.component-container {
+  width: 90%;
+  margin: auto;
+  padding: 10px;
+  background-color: $component-background;
+  border-radius: 15px;
+  min-width: 100px;
+}

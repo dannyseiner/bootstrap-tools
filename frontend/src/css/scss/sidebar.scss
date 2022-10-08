@@ -1,0 +1,47 @@
+// SIDEBAR
+.sidebar-container {
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 100vh;
+  background-color: $component-background;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.sidebar-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 10px;
+}
+
+.sidebar-item > svg {
+  transition: 0.15s ease-in-out;
+}
+
+.sidebar-item:hover {
+  background-color: white;
+}
+.sidebar-item:hover > svg {
+  fill: black;
+}
+
+.sidebar-item-text {
+  display: none;
+  transition: 1s ease-in-out !important;
+  font-weight: 600;
+  padding: 6px;
+}
+
+.sidebar-content-last {
+  position: absolute;
+  bottom: 0;
+}
