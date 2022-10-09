@@ -11,27 +11,31 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  z-index: 20;
 }
 
 .sidebar-item {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 6px;
   cursor: pointer;
-  padding: 10px;
   margin: 5px;
-  border-radius: 10px;
+  border-bottom: 1px solid $component-background;
 }
 
+.sidebar-item-active .sidebar-item {
+  transition: 0.05s ease-in-out !important;
+}
+
+.sidebar-item-active .sidebar-item-text {
+  color: $primary-color;
+}
+.sidebar-item-active > svg {
+  fill: $primary-color;
+}
 .sidebar-item > svg {
   transition: 0.15s ease-in-out;
-}
-
-.sidebar-item:hover {
-  background-color: white;
-}
-.sidebar-item:hover > svg {
-  fill: black;
 }
 
 .sidebar-item-text {
@@ -39,9 +43,27 @@
   transition: 1s ease-in-out !important;
   font-weight: 600;
   padding: 6px;
+  margin-left: 7px;
 }
 
 .sidebar-content-last {
   position: absolute;
   bottom: 0;
 }
+
+// EFFECTS
+.sidebar-container:hover {
+  width: 130px;
+}
+.sidebar-container:hover .sidebar-item {
+  justify-content: flex-start;
+}
+.sidebar-container:hover .sidebar-item-text {
+  display: block;
+}
+.sidebar-item:hover {
+  border-bottom: 1px solid white;
+}
+// .sidebar-item:hover > svg {
+//   fill: black;
+// }

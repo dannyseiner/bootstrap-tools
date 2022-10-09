@@ -3,7 +3,7 @@ import React from "react";
 function Home() {
   return (
     <div className="component-container">
-      <h3>Bootstrap tools</h3>
+      <h2>Bootstrap tools</h2>
       <p>This is main page of bootstrap tools</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, eos

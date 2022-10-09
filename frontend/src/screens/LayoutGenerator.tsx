@@ -3,7 +3,7 @@ import React from "react";
 function LayoutGenerator() {
   return (
     <div className="component-container">
-      <h3>Layout generator</h3>
+      <h2>Layout generator</h2>
       <p>This is main page of bootstrap tools</p>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, eos

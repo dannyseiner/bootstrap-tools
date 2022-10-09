@@ -39,3 +39,16 @@ body {
   border-radius: 15px;
   min-width: 100px;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+//FONTS & TEXTS & COLORS
+.text-primary {
+  color: $primary-color !important;
+}
+
+.fill-primary {
+  fill: $primary-color !important;
+}
