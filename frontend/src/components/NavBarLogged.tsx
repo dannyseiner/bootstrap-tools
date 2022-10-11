@@ -1,10 +1,30 @@
-import React from "react";
-import { ConeStriped, PersonFill } from "react-bootstrap-icons";
+import React, { useState } from "react";
+import { PersonFill, List, X } from "react-bootstrap-icons";
 
-function NavBarLogged() {
+function NavBarLogged({ expandFunction, expandSideBar }: any) {
+  const [expandStatus, setExpandStatus] = useState<boolean>(false);
   return (
     <div className="navbar-container">
-      <ConeStriped size={25} className="fill-primary" />
+      {expandStatus === true ? (
+        <X
+          size={30}
+          className="fill-dark cursor-pointer"
+          onClick={() => {
+            setExpandStatus(false);
+            expandFunction(false);
+          }}
+        />
+      ) : (
+        <List
+          size={30}
+          className="fill-dark cursor-pointer"
+          onClick={() => {
+            setExpandStatus(true);
+            expandFunction(true);
+          }}
+        />
+      )}
+
       <h3>
         Bootstrap <span className="text-primary">Tools</span>
       </h3>

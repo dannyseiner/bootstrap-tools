@@ -38,6 +38,7 @@ body {
   background-color: $component-background;
   border-radius: 15px;
   min-width: 100px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .cursor-pointer {
@@ -51,4 +52,26 @@ body {
 
 .fill-primary {
   fill: $primary-color !important;
+}
+
+.text-dark {
+  color: $base-color !important;
+}
+
+.fill-dark {
+  fill: $base-color !important;
+}
+
+.box-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+// RESPONSIVE
+@media only screen and (max-device-width: 480px) {
+  .sidebar-container {
+    opacity: 0;
+  }
+  .page-wrapper {
+    left: 0;
+  }
 }

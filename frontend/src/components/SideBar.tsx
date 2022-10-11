@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Diagram2Fill,
   HouseFill,
-  PersonBadge,
   PaletteFill,
-  ChatLeftTextFill,
+  InfoSquareFill,
 } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 
-function SideBar() {
+function SideBar({ expand }: any) {
   const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState<string>("");
 
@@ -21,14 +20,22 @@ function SideBar() {
     return str === activeLink ? "sidebar-item-active" : "";
   };
 
+  useEffect(() => {
+    console.log(expand);
+  }, []);
+
   return (
-    <div className="sidebar-container">
+    <div
+      className={`sidebar-container ${
+        expand === true ? "sidebar-expaned" : ""
+      }`}
+    >
       <div className="sidebar-content">
         <div
           className={`sidebar-item ${renderActiveLink("")}`}
           onClick={() => redirectEvt("")}
         >
-          <HouseFill color={"white"} size={30} />
+          <HouseFill color={"black"} size={30} />
           <p className="sidebar-item-text">Home</p>
         </div>
 
@@ -36,7 +43,7 @@ function SideBar() {
           className={`sidebar-item ${renderActiveLink("layout")}`}
           onClick={() => redirectEvt("layout")}
         >
-          <Diagram2Fill color={"white"} size={30} />
+          <Diagram2Fill color={"black"} size={30} />
           <p className="sidebar-item-text">Grid</p>
         </div>
 
@@ -44,18 +51,20 @@ function SideBar() {
           className={`sidebar-item ${renderActiveLink("palette")}`}
           onClick={() => redirectEvt("palette")}
         >
-          <PaletteFill color={"white"} size={30} />
+          <PaletteFill color={"black"} size={30} />
           <p className="sidebar-item-text">Palette</p>
         </div>
       </div>
 
       <div className="sidebar-content-last">
-        <div
-          className={`sidebar-item ${renderActiveLink("support")}`}
-          onClick={() => redirectEvt("support")}
-        >
-          <ChatLeftTextFill color={"white"} size={30} />
-          <p className="sidebar-item-text">Support</p>
+        <div className="sidebar-content">
+          <div
+            className={`sidebar-item ${renderActiveLink("support")}`}
+            onClick={() => redirectEvt("support")}
+          >
+            <InfoSquareFill color={"black"} size={30} />
+            <p className="sidebar-item-text">Support</p>
+          </div>
         </div>
       </div>
     </div>
