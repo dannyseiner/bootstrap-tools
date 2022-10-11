@@ -44,11 +44,9 @@
 
 .grid-drop {
   width: calc(100% - 10px);
-  height: 80px;
+  height: auto;
+  padding: 10px;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .component-drop {
@@ -63,8 +61,13 @@
   .component-drop {
   opacity: 1 !important;
 }
-.copoment-drop-active {
+.component-drop-active {
   opacity: 1 !important;
+  display: block !important;
+}
+
+.grid-drop-text {
+  text-align: center;
 }
 
 .react-draggable-transparent-selection
@@ -75,4 +78,8 @@
   .grid-drop
   .grid-drop-text {
   display: block;
+}
+
+.rendered-code {
+  margin-left: 15px;
 }

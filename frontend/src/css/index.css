@@ -244,11 +244,9 @@ body {
 
 .grid-drop {
   width: calc(100% - 10px);
-  height: 80px;
+  height: auto;
+  padding: 10px;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .component-drop {
@@ -260,12 +258,21 @@ body {
   opacity: 1 !important;
 }
 
-.copoment-drop-active {
+.component-drop-active {
   opacity: 1 !important;
+  display: block !important;
+}
+
+.grid-drop-text {
+  text-align: center;
 }
 
 .react-draggable-transparent-selection #root .page-container .page-wrapper .component-container .grid-drop .grid-drop-text {
   display: block;
+}
+
+.rendered-code {
+  margin-left: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */

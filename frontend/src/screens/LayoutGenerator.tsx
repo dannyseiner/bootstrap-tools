@@ -3,11 +3,17 @@ import LayoutDraggable from "../components/layoutDraggable";
 function LayoutGenerator() {
   const [dropList, setDropList] = useState<any>([]);
 
-  // const successDropEvent = () => {
-  //   setDropList([...dropList, "as"]);
-  // };
+  const successDropEvent = (e: any) => {
+    setDropList([...dropList, e]);
+  };
 
-  const text = () => alert("test");
+  const removeFromDropList = (e: any) => {
+    const newData = dropList.filter((object: any) => {
+      return object.id !== e.id;
+    });
+    setDropList(newData);
+  };
+
   return (
     <div>
       <div className="component-container">
@@ -20,24 +26,46 @@ function LayoutGenerator() {
         </p>
 
         <div className="row m-0 p-0">
-          <LayoutDraggable size={"col-sm"} onSuccessDrop={text} />
-          <LayoutDraggable size={"col-sm"} />
-          <LayoutDraggable size={"col-sm"} />
-          <LayoutDraggable size={"col-sm-8"} />
-          <LayoutDraggable size={"col-sm-4"} />
-          <LayoutDraggable size={"col-sm-6"} />
-          <LayoutDraggable size={"col-sm-6"} />
+          <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
+          <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
+          <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
+          <LayoutDraggable size={"col-sm-8"} onSuccessDrop={successDropEvent} />
+          <LayoutDraggable size={"col-sm-4"} onSuccessDrop={successDropEvent} />
+          <LayoutDraggable size={"col-sm-6"} onSuccessDrop={successDropEvent} />
+          <LayoutDraggable size={"col-sm-6"} onSuccessDrop={successDropEvent} />
         </div>
       </div>
       <div
         className={`component-container component-drop ${
-          dropList.length > 0 ? "component-drop-active" : ""
+          dropList.length !== 0 ? "component-drop-active" : ""
         }`}
         style={{ marginTop: 50 }}
       >
         <div className={`grid-drop`}>
-          <p className="grid-drop-text">Drop in here!</p>
+          <div className="row m-0 p-0">
+            <p className="grid-drop-text">Drop in here!</p>
+            {dropList.map((item: any, index: number) => (
+              <div
+                className={`${item.size} col-card-container`}
+                key={item.id}
+                onClick={() => removeFromDropList(item)}
+              >
+                <div className="col-card handle">
+                  <p className="col-card-text">{item.size}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </div>
+      <div className="component-container" style={{ marginTop: 50 }}>
+        &lt;div class="row"&gt;
+        {dropList.map((item: any, index: number) => (
+          <div className="rendered-code">
+            &lt;div class="{item.size}"&gt;{item.size}&lt;/div&gt;
+          </div>
+        ))}
+        &lt;/div&gt;
       </div>
     </div>
   );

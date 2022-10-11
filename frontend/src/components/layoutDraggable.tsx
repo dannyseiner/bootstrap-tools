@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
-function LayoutDraggable({ size }: any, { onSuccessDrop }: any) {
+function LayoutDraggable({ size, onSuccessDrop }: any) {
   const [isBeingMoved, setIsBeingMoved] = useState<boolean>(false);
 
   const dropEvt = (e: any) => {
@@ -8,7 +8,10 @@ function LayoutDraggable({ size }: any, { onSuccessDrop }: any) {
       e.target.classList[0] === "grid-drop" ||
       e.target.classList[0] === "grid-drop-text"
     ) {
-      onSuccessDrop();
+      onSuccessDrop({
+        id: Math.random().toString(36).substr(2, 9),
+        size: size,
+      });
     }
     setIsBeingMoved(false);
   };
