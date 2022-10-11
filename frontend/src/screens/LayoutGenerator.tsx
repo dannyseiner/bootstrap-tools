@@ -25,7 +25,7 @@ function LayoutGenerator() {
           enim, in ipsam nam voluptas pariatur rerum quam vero illo ut sequi.
         </p>
 
-        <div className="row m-0 p-0">
+        <div className="custom-row flex-wrap m-0 p-0">
           <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
           <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
           <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
@@ -42,7 +42,7 @@ function LayoutGenerator() {
         style={{ marginTop: 50 }}
       >
         <div className={`grid-drop`}>
-          <div className="row m-0 p-0">
+          <div className="custom-ow m-0 p-0">
             <p className="grid-drop-text">Drop in here!</p>
             {dropList.map((item: any, index: number) => (
               <div
@@ -58,8 +58,13 @@ function LayoutGenerator() {
           </div>
         </div>
       </div>
-      <div className="component-container" style={{ marginTop: 50 }}>
-        &lt;div class="row"&gt;
+      <div
+        className={`component-container ${
+          dropList.length == 0 ? "d-none" : ""
+        }`}
+        style={{ marginTop: 50 }}
+      >
+        &lt;div class="custom-row"&gt;
         {dropList.map((item: any, index: number) => (
           <div className="rendered-code">
             &lt;div class="{item.size}"&gt;{item.size}&lt;/div&gt;

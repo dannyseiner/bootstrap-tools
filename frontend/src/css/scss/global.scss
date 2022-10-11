@@ -41,6 +41,10 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -66,6 +70,9 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.w-100 {
+  width: 100%;
+}
 // RESPONSIVE
 @media only screen and (max-device-width: 480px) {
   .sidebar-container {
@@ -74,4 +81,25 @@ body {
   .page-wrapper {
     left: 0;
   }
+}
+
+//
+
+.custom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.custom-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }

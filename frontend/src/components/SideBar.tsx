@@ -5,11 +5,13 @@ import {
   PaletteFill,
   InfoSquareFill,
 } from "react-bootstrap-icons";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function SideBar({ expand }: any) {
   const navigate = useNavigate();
-  const [activeLink, setActiveLink] = useState<string>("");
+  const [activeLink, setActiveLink] = useState<string>(
+    useLocation().pathname.replace("/", "")
+  );
 
   const redirectEvt = (path: string) => {
     setActiveLink(`${path}`);

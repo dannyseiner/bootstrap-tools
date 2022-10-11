@@ -144,6 +144,10 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.d-none {
+  display: none !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -168,6 +172,10 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
+.w-100 {
+  width: 100%;
+}
+
 @media only screen and (max-device-width: 480px) {
   .sidebar-container {
     opacity: 0;
@@ -176,6 +184,26 @@ body {
     left: 0;
   }
 }
+.custom-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
 .navbar-container {
   position: fixed;
   display: flex;
@@ -222,18 +250,26 @@ body {
 
 .col-sm-8 {
   width: calc(75% - 10px);
+  max-width: calc(75% - 10px);
+  min-width: calc(75% - 10px);
 }
 
 .col-sm-4 {
   width: calc(25% - 10px);
+  min-width: calc(25% - 10px);
+  max-width: calc(25% - 10px);
 }
 
 .col-sm {
   width: calc(33.3% - 10px);
+  min-width: calc(33.3% - 10px);
+  max-width: calc(33.3% - 10px);
 }
 
 .col-sm-6 {
   width: calc(50% - 10px);
+  min-width: calc(50% - 10px);
+  max-width: calc(50% - 10px);
 }
 
 #being-moved-element > .react-draggable.react-draggable-dragged {
@@ -273,6 +309,39 @@ body {
 
 .rendered-code {
   margin-left: 15px;
+}
+
+.color-input-container {
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 350px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.color-input-label {
+  margin-left: 20px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.color-input {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.color-input::-webkit-color-swatch {
+  border: none;
 }
 
 /*# sourceMappingURL=index.css.map */

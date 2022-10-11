@@ -1,0 +1,29 @@
+.color-input-container {
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 350px;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.color-input-label {
+  margin-left: 20px;
+  font-weight: 400;
+  width: 100%;
+}
+
+.color-input {
+  -webkit-appearance: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+.color-input::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+.color-input::-webkit-color-swatch {
+  border: none;
+}
