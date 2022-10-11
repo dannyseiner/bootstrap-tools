@@ -20,10 +20,6 @@ function SideBar({ expand }: any) {
     return str === activeLink ? "sidebar-item-active" : "";
   };
 
-  useEffect(() => {
-    console.log(expand);
-  }, []);
-
   return (
     <div
       className={`sidebar-container ${
