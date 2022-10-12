@@ -25,7 +25,10 @@ function LayoutGenerator() {
           enim, in ipsam nam voluptas pariatur rerum quam vero illo ut sequi.
         </p>
 
-        <div className="custom-row flex-wrap m-0 p-0">
+        <div
+          className="custom-row flex-wrap m-0 p-0"
+          style={{ justifyContent: "space-between", gap: 10 }}
+        >
           <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
           <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
           <LayoutDraggable size={"col-sm"} onSuccessDrop={successDropEvent} />
