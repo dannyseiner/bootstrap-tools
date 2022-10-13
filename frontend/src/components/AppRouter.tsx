@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../screens/Home";
 import "../css/index.css";
@@ -7,6 +7,8 @@ import NavBarLogged from "./NavBarLogged";
 import LayoutGenerator from "../screens/LayoutGenerator";
 import PaletteGenerator from "../screens/PaletteGenerator";
 import Support from "../screens/Support";
+import Components from "../screens/Components";
+import News from "./News";
 function AppRouter() {
   const [expandSideBar, setExpandSideBar] = useState<boolean>(false);
 
@@ -25,6 +27,8 @@ function AppRouter() {
             <Route path="/" element={<Home />} />
             <Route path="/layout" element={<LayoutGenerator />} />
             <Route path="/palette" element={<PaletteGenerator />} />
+            <Route path="/components" element={<Components />} />
+            <Route path="/news" element={<News />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </div>

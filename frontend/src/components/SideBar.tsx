@@ -4,6 +4,8 @@ import {
   HouseFill,
   PaletteFill,
   InfoSquareFill,
+  CollectionFill,
+  Newspaper,
 } from "react-bootstrap-icons";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -52,10 +54,25 @@ function SideBar({ expand }: any) {
           <PaletteFill color={"black"} size={30} />
           <p className="sidebar-item-text">Palette</p>
         </div>
+
+        <div
+          className={`sidebar-item ${renderActiveLink("components")}`}
+          onClick={() => redirectEvt("components")}
+        >
+          <CollectionFill color={"black"} size={30} />
+          <p className="sidebar-item-text">Components</p>
+        </div>
       </div>
 
       <div className="sidebar-content-last">
         <div className="sidebar-content">
+          <div
+            className={`sidebar-item ${renderActiveLink("news")}`}
+            onClick={() => redirectEvt("news")}
+          >
+            <Newspaper color={"black"} size={30} />
+            <p className="sidebar-item-text">News</p>
+          </div>
           <div
             className={`sidebar-item ${renderActiveLink("support")}`}
             onClick={() => redirectEvt("support")}
