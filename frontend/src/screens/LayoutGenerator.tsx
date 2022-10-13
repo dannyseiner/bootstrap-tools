@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LayoutDraggable from "../components/layoutDraggable";
+import Alert from "../components/Alert";
 function LayoutGenerator() {
   const [dropList, setDropList] = useState<any>([]);
-
+  const [alertStatus, setAlertStatus] = useState<boolean>(false);
+  let copyDropList = "";
   const successDropEvent = (e: any) => {
     setDropList([...dropList, e]);
   };
@@ -14,8 +16,29 @@ function LayoutGenerator() {
     setDropList(newData);
   };
 
+  useEffect(() => {
+    copyDropList = "<div class='row'> \n";
+    for (let s of dropList) {
+      copyDropList += `\n    <div class='${s.size}'>\n\n    </div>`;
+    }
+    copyDropList += "\n\n</div>";
+  }, [dropList]);
+
+  const copyCode = () => {
+    setAlertStatus(true);
+    navigator.clipboard.writeText(copyDropList);
+    setTimeout(() => {
+      setAlertStatus(false);
+    }, 2000);
+  };
+
   return (
     <div>
+      <Alert
+        title={"Code has been copied to clipboard"}
+        variant={"success"}
+        show={alertStatus}
+      />
       <div className="component-container">
         <h2>Layout generator</h2>
         <p>This is main page of bootstrap tools</p>
@@ -65,11 +88,19 @@ function LayoutGenerator() {
         className={`component-container ${
           dropList.length == 0 ? "d-none" : ""
         }`}
-        style={{ marginTop: 50 }}
+        style={{ marginTop: 50, marginBottom: 70 }}
       >
-        &lt;div class="custom-row"&gt;
+        <div className="palette-nav-menu">
+          <button className="palette-button" onClick={() => copyCode()}>
+            Copy
+          </button>
+          <button className="palette-button" onClick={() => setDropList([])}>
+            Clear
+          </button>
+        </div>
+        &lt;div class="row"&gt;
         {dropList.map((item: any, index: number) => (
-          <div className="rendered-code">
+          <div className="rendered-code" key={index}>
             &lt;div class="{item.size}"&gt;{item.size}&lt;/div&gt;
           </div>
         ))}
