@@ -8,7 +8,8 @@ import LayoutGenerator from "../screens/LayoutGenerator";
 import PaletteGenerator from "../screens/PaletteGenerator";
 import Support from "../screens/Support";
 import Components from "../screens/Components";
-import News from "./News";
+import News from "../screens/News";
+import NewsSingle from "../screens/NewsSingle";
 function AppRouter() {
   const [expandSideBar, setExpandSideBar] = useState<boolean>(false);
 
@@ -29,6 +30,7 @@ function AppRouter() {
             <Route path="/palette" element={<PaletteGenerator />} />
             <Route path="/components" element={<Components />} />
             <Route path="/news" element={<News />} />
+            <Route path="/news/:title" element={<NewsSingle />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </div>
