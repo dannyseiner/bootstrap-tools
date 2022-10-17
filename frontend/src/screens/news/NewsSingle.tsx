@@ -3,15 +3,19 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import API from "../../controllers/api";
 import Formatter from "../../controllers/formatter";
+import { INews } from "../../interfaces/api/INews";
 const local_data = require("../../data/news.json");
 function NewsSingle() {
-  const [newsData, setNewsData] = useState<any>({
-    news_title: "",
-  });
   const params = useParams();
+  const [newsData, setNewsData] = useState<INews>({
+    news_id: "",
+    news_title: "",
+    news_content: "",
+    news_created: "",
+  });
+
   useEffect(() => {
     loadNewsData();
-    console.log(newsData);
   }, []);
 
   const loadNewsData = () => {

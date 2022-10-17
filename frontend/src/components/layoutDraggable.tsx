@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Draggable from "react-draggable";
-function LayoutDraggable({ size, onSuccessDrop }: any) {
+import { IDraggable } from "../interfaces/components/IDraggable";
+function LayoutDraggable({ size, onSuccessDrop }: IDraggable) {
   const [isBeingMoved, setIsBeingMoved] = useState<boolean>(false);
 
   const dropEvt = (e: any) => {

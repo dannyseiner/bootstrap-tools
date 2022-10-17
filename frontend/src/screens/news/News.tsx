@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../../controllers/api";
 import formatter from "../../controllers/formatter";
+import { INews } from "../../interfaces/api/INews";
 const local_data = require("../../data/news.json");
 function News() {
-  const [newsData, setNewsData] = useState<any>([]);
+  const [newsData, setNewsData] = useState<INews[]>([]);
   const navigate = useNavigate();
 
   const getNewsData = () => {
@@ -22,7 +23,7 @@ function News() {
 
   return (
     <div>
-      {newsData.map((news: any, index: number) => (
+      {newsData.map((news: INews, index: number) => (
         <div
           className="component-container cursor-pointer"
           style={{ marginTop: 35 }}
