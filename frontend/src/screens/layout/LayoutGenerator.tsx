@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import LayoutDraggable from "../components/layoutDraggable";
-import Alert from "../components/Alert";
+import LayoutDraggable from "../../components/layoutDraggable";
+import Alert from "../../components/Alert";
 function LayoutGenerator() {
   const [dropList, setDropList] = useState<any>([]);
   const [alertStatus, setAlertStatus] = useState<boolean>(false);

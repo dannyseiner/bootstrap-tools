@@ -427,4 +427,81 @@ body {
   transition: 0.3s ease-in-out;
 }
 
+.login-container {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-login {
+  width: 90%;
+  margin: auto;
+}
+
+.input-container {
+  width: 95%;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.input-value-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container > label {
+  display: block;
+  font-weight: 600;
+  color: rgb(68, 68, 68);
+  float: left;
+}
+
+.input-component {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid rgba(68, 68, 68, 0.3);
+  color: rgba(68, 68, 68, 0.3);
+  background-color: none;
+  background: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.input-component:hover {
+  border-bottom: 1px solid rgba(68, 68, 68, 0.6);
+  color: rgba(68, 68, 68, 0.6);
+}
+
+.input-component:focus {
+  border-bottom: 1px solid #444444;
+  color: #444444;
+}
+
+.component-button {
+  padding: 10px;
+  padding-left: 46px;
+  padding-right: 46px;
+  border: none;
+  background-color: rgb(68, 68, 68);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 50px;
+  color: rgb(249, 249, 249);
+  cursor: pointer;
+  margin-bottom: 8px;
+  box-shadow: rgba(149, 157, 165, 0.4) 0px 8px 24px;
+}
+
+.component-button:hover {
+  box-shadow: rgb(149, 157, 165) 0px 8px 24px;
+}
+
 /*# sourceMappingURL=index.css.map */

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PersonFill, List, X } from "react-bootstrap-icons";
-
-function NavBarLogged({ expandFunction, expandSideBar }: any) {
+import { INavbar } from "../interfaces/components/INavbar";
+function NavBarLogged({ expandFunction }: INavbar) {
   const [expandStatus, setExpandStatus] = useState<boolean>(false);
   return (
     <div className="navbar-container">

@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../../controllers/api";
+import formatter from "../../controllers/formatter";
+const local_data = require("../../data/news.json");
 function News() {
   const [newsData, setNewsData] = useState<any>([]);
   const navigate = useNavigate();
+
   const getNewsData = () => {
-    axios
-      .get(`${"http://localhost:3010/news"}`)
-      .then((response) => setNewsData(response.data));
+    API.get(
+      "news",
+      (response: any) => setNewsData(response.data),
+      () => setNewsData(local_data)
+    );
   };
 
   useEffect(() => {
     getNewsData();
+    formatter.encode("2015-03-25T12:00:00Z");
   }, []);
 
   return (
@@ -33,7 +39,7 @@ function News() {
                   <h3>{news.news_title}</h3>
                 </div>
                 <div className="custom-col" style={{ alignItems: "flex-end" }}>
-                  <p>{news.news_created}</p>
+                  <p>{formatter.encode(news.news_created).split(" ")[0]}</p>
                 </div>
               </div>
             </div>

@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Alert from "../components/Alert";
+import Alert from "../../components/Alert";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+
 function PaletteGenerator() {
   let colorOutput: string = "";
   let backgroundOutput: string = "";
@@ -74,7 +78,6 @@ function PaletteGenerator() {
   return (
     <div>
       <Alert
-        status={copyAlertStatus}
         title="Copied to clipboard"
         variant={"success"}
         show={copyAlertStatus}

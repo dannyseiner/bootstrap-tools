@@ -1,0 +1,14 @@
+[
+  {
+    "news_id": "ba40fe3d-3121-4c4b-b0e7-8c31ed2a0609",
+    "news_title": "News testing title 1 ba40fe3d",
+    "news_content": "Even though using 'lorem ipsum' often arouses curiosity due to its resemblance to classical Latin, it is not intended to have meaning. Where text is visible in a document, people tend to focus on the textual content rather than upon overall presentation, so publishers use lorem ipsum when displaying a typeface or design in order to direct the focus to presentation. 'Lorem ipsum' also approximates a typical distribution of letters in English.",
+    "news_created": "10.10.2002 10:10:10"
+  },
+  {
+    "news_id": "0d1f8e42-c351-426c-bd54-7e3883bb1b9c",
+    "news_title": "News testing title 2 0d1f8e42",
+    "news_content": "Quisque tincidunt scelerisque libero. Morbi imperdiet, mauris ac auctor dictum, nisl ligula egestas nulla, et sollicitudin sem purus in lacus. Quisque tincidunt scelerisque libero. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Integer vulputate sem a nibh rutrum consequat. Praesent vitae arcu tempor neque lacinia pretium. Aliquam id dolor. Etiam ligula pede, sagittis quis, interdum ultricies, scelerisque eu. Aenean fermentum risus id tortor. Phasellus rhoncus. Etiam quis quam. In enim a arcu imperdiet malesuada. Mauris metus. Nulla turpis magna, cursus sit amet, suscipit a, interdum id, felis. Quisque porta.",
+    "news_created": "16.1.2022 16:13:00"
+  }
+]

@@ -1,6 +1,6 @@
 import React from "react";
-
-function Alert({ title, variant, show }: any) {
+import { IAlert } from "../interfaces/components/IAlert";
+function Alert({ title, variant, show }: IAlert) {
   return (
     <div
       className={`alert-container ${
