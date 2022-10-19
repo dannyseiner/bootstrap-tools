@@ -15,6 +15,17 @@ const api = {
       .post(`http://localhost:3010/${path}`, data)
       .then((response) => callback(response));
   },
+
+  authenticate: (data: object) => {
+    axios.post(`http://localhost:3010/authenticate`, data).then((response) => {
+      if (response.data.length !== 0) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+        return true;
+      } else {
+        return false;
+      }
+    });
+  },
 };
 
 export default api;

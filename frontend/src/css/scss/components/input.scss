@@ -7,15 +7,14 @@
 .input-value-container {
   width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.input-container > label {
+.input-component-label {
   display: block;
   font-weight: 600;
   color: $base-color;
-  float: left;
+  position: absolute;
+  margin-top: 10px;
 }
 
 .input-component {
@@ -31,12 +30,69 @@
   font-size: 16px;
 }
 
-.input-component:hover {
-  border-bottom: 1px solid rgba($base-color, 0.6);
-  color: rgba($base-color, 0.6);
+.input-component:focus .input-component-label {
+  font-size: 10px;
+  display: none;
 }
 
-.input-component:focus {
-  border-bottom: 1px solid rgba($base-color, 1);
-  color: rgba($base-color, 1);
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 90%;
+  margin: auto;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  color: $base-color;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: $base-color;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #11998e;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
 }

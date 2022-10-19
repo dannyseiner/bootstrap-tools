@@ -15,7 +15,6 @@ function Login() {
         label="Email"
         value={userEmail}
         onChange={setUserEmail}
-        placeholder="email@noreply.com"
       />
 
       <Input
@@ -23,7 +22,6 @@ function Login() {
         label="Password"
         value={userPassword}
         onChange={setUserPassword}
-        placeholder="********"
       />
 
       <Button title="Log In" onClick={() => console.log("clicked")} />
